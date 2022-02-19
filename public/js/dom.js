@@ -32,7 +32,7 @@ const handleSearch = () => {
 
 const handleSuggestions = (e) => {
   const searchTerm = e.target.value;
-  xhrRequest(`/suggest/${searchTerm}`, 'GET', addSuggestions);
+  xhrRequest('/suggest', 'POST', addSuggestions, `suggest=${searchTerm}`);
 };
 
 inputField.addEventListener('input', handleSuggestions);
